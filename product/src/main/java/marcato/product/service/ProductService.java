@@ -39,6 +39,10 @@ public class ProductService {
     public void changeProduct(Long id, ProductDTO productDTO){
         ProductEntity product = productRepository.findById(id);
 
+        if (product == null) {
+            throw new IllegalArgumentException("Product with id " + id + " not found");
+        }
+
         product.setName(productDTO.getName());
         product.setDescription(productDTO.getDescription());
         product.setCulture(productDTO.getCulture());

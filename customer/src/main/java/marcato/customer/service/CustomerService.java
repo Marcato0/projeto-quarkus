@@ -40,6 +40,10 @@ public class CustomerService {
     public void changeCustomer(Long id, CustomerDTO customerDTO){
         CustomerEntity customer = customerRepository.findById(id);
 
+        if (customer == null) {
+            throw new IllegalArgumentException("Customer with id " + id + " not found");
+        }
+
         customer.setName(customerDTO.getName());
         customer.setEmail(customerDTO.getEmail());
         customer.setPhone(customerDTO.getPhone());
@@ -48,6 +52,7 @@ public class CustomerService {
     }
 
     public void deleteCustomer(Long id){
+
         customerRepository.deleteById(id);
     }
 

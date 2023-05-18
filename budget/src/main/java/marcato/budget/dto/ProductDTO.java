@@ -1,4 +1,4 @@
-package marcato.product.dto;
+package marcato.budget.dto;
 
 import jakarta.persistence.Column;
 import jakarta.validation.constraints.NotBlank;
@@ -14,8 +14,6 @@ import lombok.extern.jackson.Jacksonized;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ProductDTO {
-
-    private long id;
 
     @NotBlank
     @Size(max=80)

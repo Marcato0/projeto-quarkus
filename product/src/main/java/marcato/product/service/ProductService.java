@@ -17,19 +17,24 @@ public class ProductService {
     ProductRepository productRepository;
 
     public List<ProductDTO> findAllProducts(){
-        List<ProductDTO> customers = new ArrayList<>();
+        List<ProductDTO> products = new ArrayList<>();
 
         productRepository
                 .findAll()
                 .stream()
                 .forEach(
                         item->{
-                            customers.add(mapProductEntityToDTO(item));
+                            products.add(mapProductEntityToDTO(item));
                         }
                 );
 
-        return customers;
+        return products;
     }
+
+    public ProductDTO getProductById(Long id){
+        return mapProductEntityToDTO(productRepository.findById(id));
+    }
+
 
     public void createNewProduct(ProductDTO productDTO){
         productRepository

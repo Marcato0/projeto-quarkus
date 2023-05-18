@@ -12,6 +12,8 @@ import lombok.extern.jackson.Jacksonized;
 @AllArgsConstructor
 public class CustomerDTO {
 
+    private long id;
+
     @NotBlank
     @Size(max=80)
     private String name;

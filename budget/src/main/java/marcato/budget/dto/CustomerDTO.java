@@ -1,6 +1,5 @@
-package marcato.product.dto;
+package marcato.budget.dto;
 
-import jakarta.persistence.Column;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
@@ -13,22 +12,17 @@ import lombok.extern.jackson.Jacksonized;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class ProductDTO {
-
-    private long id;
+public class CustomerDTO {
 
     @NotBlank
     @Size(max=80)
     private String name;
 
     @NotBlank
-    private String description;
+    @Size(max=50)
+    private String email;
 
     @NotBlank
-    @Size(max=80)
-    private String culture;
-
-    @NotBlank
-    @Column(nullable = false)
-    private String area_size;
+    @Size(max=11)
+    private String phone;
 }

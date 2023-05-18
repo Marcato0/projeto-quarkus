@@ -1,4 +1,4 @@
-package marcato.customer.entity;
+package marcato.product.entity;
 
 
 import jakarta.persistence.*;
@@ -10,8 +10,8 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "customer")
-public class CustomerEntity {
+@Table(name = "product")
+public class ProductEntity {
 
     private static final long serialVersionUID = 1L;
 
@@ -22,9 +22,12 @@ public class CustomerEntity {
     @Column(nullable = false, length = 80)
     private String name;
 
-    @Column(nullable = false, length = 50)
-    private String email;
+    @Column(nullable = false)
+    private String description;
 
-    @Column(nullable = false, length = 11)
-    private String phone;
+    @Column(nullable = false, length = 80)
+    private String culture;
+
+    @Column(nullable = false)
+    private String area_size;
 }
